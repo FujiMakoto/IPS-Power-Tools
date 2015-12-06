@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+/*
+ * Package the application into a .phar container
+ */
+
+$p = new Phar('ptools.phar', FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::KEY_AS_FILENAME, 'ptools.phar');
+$p->startBuffering();
+
+$p->setStub('<?php Phar::mapPhar(); include "phar://ptools.phar/application.php"; __HALT_COMPILER(); ?>');
+
+$p->buildFromDirectory('.', '$(.*)\.php$');
+$p->buildFromDirectory('.', '$(.*)\.md$');
+
+$p->stopBuffering();
+print "ptools.phar packaged successfully\n";
