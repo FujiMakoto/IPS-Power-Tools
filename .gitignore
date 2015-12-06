@@ -40,7 +40,7 @@ vendor/
 /phpunit.xml
 
 # Build data
-/build/
+#/build/
 
 # Composer PHAR
 /composer.phar
@@ -99,3 +99,5 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 
+# Built application
+ptools.phar

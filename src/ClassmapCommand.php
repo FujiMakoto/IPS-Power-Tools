@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * @brief       Maps ID numbers to classes for use in error codes (Modified for use with Power Tools)
+ * @author      Makoto Fujimoto <makoto@makoto.io>
+ * @copyright   (c) 2015 Makoto Fujimoto
+ * @license     <a href='http://opensource.org/licenses/MIT'>MIT License</a>
+ * @since       19 Oct 2015
+ * @version     1.0.0
+ */
+
 namespace PowerTools;
 
 use Symfony\Component\Console\Command\Command;
