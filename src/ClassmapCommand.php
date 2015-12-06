@@ -25,7 +25,7 @@ class ClassmapCommand extends Command
 	{
 		$this
 			->setName('classmap')
-			->setDescription('Generate a map of error codes for classes in an application.')
+			->setDescription('Generate a map of error codes for classes in an IPS application')
 			->addArgument(
 				'appdir',
 				InputArgument::REQUIRED,
@@ -49,8 +49,6 @@ class ClassmapCommand extends Command
 
 	protected function execute(InputInterface $input, OutputInterface $output)
 	{
-		$output->setDecorated(true);
-
 		// Load settings
 		$appdir           = $input->getArgument('appdir');
 		$classMapFilename = $input->getOption('filename');

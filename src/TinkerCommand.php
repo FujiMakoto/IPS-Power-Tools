@@ -26,7 +26,7 @@ class TinkerCommand extends Command
 	{
 		$this
 			->setName('tinker')
-			->setDescription('Launches an interactive shell interpreter for your IPS installation')
+			->setDescription('Launches an interactive shell interpreter for an IPS installation')
 		;
 	}
 

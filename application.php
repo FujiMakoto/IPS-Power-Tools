@@ -8,7 +8,7 @@ use PowerTools\ClassmapCommand;
 use PowerTools\TinkerCommand;
 use Symfony\Component\Console\Application;
 
-$application = new Application();
+$application = new Application('Power Tools', '0.1');
 $application->add(new ClassmapCommand());
 $application->add(new TinkerCommand());
 $application->add(new Proxy\RegenCommand());

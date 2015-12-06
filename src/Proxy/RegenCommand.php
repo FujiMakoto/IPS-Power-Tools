@@ -159,7 +159,6 @@ class RegenCommand extends Command
 			$output->writeln( count($files_to_parse) . ' files matched' );
 
 		// Start our progress bar and disable the console cursor
-		$output->setDecorated(true);
 		$output->write("\033[?25l", true);
 		$progress = new ProgressBar($output, $count);
 		$progress->setFormat(" %namespace%\n %current%/%max% [%bar%] %percent:3s%% %elapsed:6s%/%estimated:-6s%");
