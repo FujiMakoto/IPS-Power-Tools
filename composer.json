@@ -10,7 +10,8 @@
     }
   ],
   "require": {
-    "symfony/console": "^3.0"
+    "symfony/console": "^3.0",
+    "psy/psysh": "v0.6.1"
   },
   "autoload": {
     "psr-4": {"PowerTools\\": "src/"}
