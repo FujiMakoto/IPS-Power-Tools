@@ -5,10 +5,25 @@
  * Package the application into a .phar container
  */
 
+# Linux executable
+$e = new Phar('ptools-linux.phar', FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::KEY_AS_FILENAME, 'ptools');
+$e->startBuffering();
+
+$e->setStub("#!/usr/bin/env php\n\n" . $e->createDefaultStub("application.php"));
+
+$e->buildFromDirectory('.', '$(.*)\.php$');
+$e->buildFromDirectory('.', '$(.*)\.md$');
+
+$e->stopBuffering();
+rename('ptools-linux.phar', 'ptools');
+print "ptools Linux executable packaged successfully\n";
+
+
+# Standard phar archive
 $p = new Phar('ptools.phar', FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::KEY_AS_FILENAME, 'ptools.phar');
 $p->startBuffering();
 
-$p->setStub('<?php Phar::mapPhar(); include "phar://ptools.phar/application.php"; __HALT_COMPILER(); ?>');
+$p->setStub($p->createDefaultStub("application.php"));
 
 $p->buildFromDirectory('.', '$(.*)\.php$');
 $p->buildFromDirectory('.', '$(.*)\.md$');
