@@ -3,6 +3,36 @@
 ## Introduction
 Power Tools is a third party command line utility for Invision Power Suite developers. It aims to aid in development by packaging several useful command line script and applications together in one easy to use application.
 
+## Installation
+If you are on Linux, there is an optional executable included in the release package which you can extract and copy to **/usr/local/bin** for convenience.
+
+Otherwise, just extract the included ptools.phar file to the directory of your IPS installation. Then, from your terminal window, navigate to the applications directory and run ptools.phar as you would any other PHP script from the command line,
+
+```
+$ php ptools.phar 
+Power Tools version 0.1
+
+Usage:
+  command [options] [arguments]
+
+Options:
+  -h, --help            Display this help message
+  -q, --quiet           Do not output any message
+  -V, --version         Display this application version
+      --ansi            Force ANSI output
+      --no-ansi         Disable ANSI output
+  -n, --no-interaction  Do not ask any interactive question
+  -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+Available commands:
+  classmap     Generate a map of error codes for classes in an IPS application
+  help         Displays help for a command
+  list         Lists commands
+  tinker       Launches an interactive shell interpreter for an IPS installation
+ proxy
+  proxy:regen  (Re)generates all proxy classes for the application
+```
+
 ## Features
 
 ### Tinker
