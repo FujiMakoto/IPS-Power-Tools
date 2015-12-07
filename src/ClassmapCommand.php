@@ -190,7 +190,7 @@ class ClassmapCommand extends Command
 					\RecursiveIteratorIterator::CATCH_GET_CHILD // Ignore "Permission denied"
 				);
 			}
-			catch ( UnexpectedValueException $e )
+			catch ( \UnexpectedValueException $e )
 			{
 				continue;
 			}
