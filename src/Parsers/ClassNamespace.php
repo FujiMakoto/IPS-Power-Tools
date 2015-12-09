@@ -31,13 +31,15 @@ class ClassNamespace
 	{
 		// Try and match a namespace pattern with a parent directory first
 		$match = preg_match(
-			'/^\\?IPS\\(?P<appdir>\w+)\\(?P<subdir>\w+)\\(?P<classname>\w+)$/', $this->classNamespace, $matches
+			'/^\\\\?IPS\\\\(?P<appdir>\w+)\\\\(?P<subdir>\w+)\\\\(?P<classname>\w+)$/', $this->classNamespace, $matches
 		);
 
 		// If that didn't work, try and match a root level namespace pattern
 		if ( !$match )
 		{
-			$match = preg_match( '/^\\?IPS\\(?P<appdir>\w+)\\(?P<classname>\w+)$/', $this->classNamespace, $matches );
+			$match = preg_match(
+				'/^\\\\?IPS\\\\(?P<appdir>\w+)\\\\(?P<classname>\w+)$/', $this->classNamespace, $matches
+			);
 		}
 
 		// If we still didn't get a match, we have an invalid namespace
@@ -47,8 +49,8 @@ class ClassNamespace
 		}
 
 		// If we're still here, parse our namespace parts
-		$this->appDir    = $matches['appDir'];
-		$this->subDir    = isset( $matches['subDir'] ) ? $matches['subDir'] : '';
-		$this->className = $matches['className'];
+		$this->appDir    = $matches['appdir'];
+		$this->subDir    = isset( $matches['subdir'] ) ? $matches['subdir'] : '';
+		$this->className = $matches['classname'];
 	}
 }
