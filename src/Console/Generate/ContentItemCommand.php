@@ -1,12 +1,11 @@
 <?php
 
 /**
- * @brief       Maps ID numbers to classes for use in error codes (Modified for use with Power Tools)
+ * @brief       Generates a boilerplate class for Content Items
  * @author      Makoto Fujimoto <makoto@makoto.io>
  * @copyright   (c) 2015 Makoto Fujimoto
  * @license     <a href='http://opensource.org/licenses/MIT'>MIT License</a>
- * @since       19 Oct 2015
- * @version     1.0.0
+ * @since       08 Dev 2015
  */
 
 namespace PowerTools\Console\Generate;
@@ -72,7 +71,7 @@ class ContentItemCommand extends Command
 			->addArgument(
 				'namespace',
 				InputArgument::REQUIRED,
-				'The namespace for the desired content item'
+				'The namespace for the desired content item class'
 			)
 		;
 	}
@@ -86,7 +85,7 @@ class ContentItemCommand extends Command
 			$template->{$key} = $value;
 		}
 
-		return $template->render(  'phar://ptools/templates/content/item.php' );
+		return $template->render( 'phar://ptools/templates/content/item.php' );
 	}
 
 	protected function writeTemplate( $template )
@@ -246,7 +245,7 @@ class ContentItemCommand extends Command
 
 		$this->icon = $question->ask(
 				$input, $output,
-				new Question('Icon', 'cubes')
+				new Question('Icon', 'file')
 		);
 
 		$this->hideLogKey = $question->ask(
