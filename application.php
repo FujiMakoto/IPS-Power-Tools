@@ -3,9 +3,9 @@
 
 require __DIR__.'/vendor/autoload.php';
 
-use PowerTools\Proxy;
-use PowerTools\ClassmapCommand;
-use PowerTools\TinkerCommand;
+use PowerTools\Console\Proxy;
+use PowerTools\Console\ClassmapCommand;
+use PowerTools\Console\TinkerCommand;
 use Symfony\Component\Console\Application;
 
 $application = new Application('Power Tools', '0.1');

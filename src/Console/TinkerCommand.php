@@ -9,7 +9,7 @@
  * @version     1.0.0
  */
 
-namespace PowerTools;
+namespace PowerTools\Console;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
