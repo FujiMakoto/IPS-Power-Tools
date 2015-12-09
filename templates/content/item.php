@@ -1,6 +1,7 @@
 <?="<?php"?>
 
-namespace <?=$namespace?>;
+
+namespace <?=$classNamespace?>;
 
 /* To prevent PHP errors (extending class does not exist) revealing path */
 if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
@@ -60,32 +61,39 @@ class _<?=$className?> extends \IPS\Content\Item
 	 * @brief   Review Class
 	 */
 	public static $reviewClass = <?=$reviewClass?>;
-<?php if ( $dbMap ) ?>
+
+<?php if ( $dbMap ) { ?>
 	/**
 	 * @brief   Database Column Map
 	 */
 	public static $databaseColumnMap = array(
-		<?php if ( $dbMapContainer !== NULL ): ?>'container'         => '<?=$dbMapContainer?>',<?php endif ?>
-		<?php if ( $dbMapAuthor !== NULL ): ?>'author'            => '<?=$dbMapAuthor?>',<?php endif ?>
-		<?php if ( $dbMapViews !== NULL ): ?>'views'             => '<?=$dbMapViews?>',<?php endif ?>
-		<?php if ( $dbMapTitle !== NULL ): ?>'title'             => '<?=$dbMapTitle?>',<?php endif ?>
-		<?php if ( $dbMapContent !== NULL ): ?>'content'           => '<?=$dbMapContent?>',<?php endif ?>
-		<?php if ( $dbMapNumComments !== NULL ): ?>'num_comments'      => '<?=$dbMapNumComments?>',<?php endif ?>
-		<?php if ( $dbMapLastComment !== NULL ): ?>'last_comment'      => '<?=$dbMapLastComment?>',
-		<?php if ( $dbMapLastCommentBy !== NULL ): ?>'last_comment_by'   => '<?=$dbMapLastCommentBy?>',<?php endif ?>
-		<?php if ( $dbMapLastCommentName !== NULL ): ?>'last_comment_name' => '<?=$dbMapLastCommentName?>',<?php endif ?>
-		<?php if ( $dbMapLastReview !== NULL ): ?>'last_review'       => '<?=$dbMapLastReview?>',<?php endif ?>
-		<?php if ( $dbMapDate !== NULL ): ?>'date'              => '<?=$dbMapDate?>',<?php endif ?>
-		<?php if ( $dbMapUpdated !== NULL ): ?>'updated'           => '<?=$dbMapUpdated?>',<?php endif ?>
-		<?php if ( $dbMapApproved !== NULL ): ?>'approved'          => '<?=$dbMapApproved?>',<?php endif ?>
-		<?php if ( $dbMapApprovedBy !== NULL ): ?>'approved_by'       => '<?=$dbMapApprovedBy?>',<?php endif ?>
-		<?php if ( $dbMapApprovedDate !== NULL ): ?>'approved_date'     => '<?=$dbMapApprovedDate?>',<?php endif ?>
-		<?php if ( $dbMapPinned !== NULL ): ?>'pinned'            => '<?=$dbMapPinned?>',<?php endif ?>
-		<?php if ( $dbMapFeatured !== NULL ): ?>'featured'          => '<?=$dbMapFeatured?>',<?php endif ?>
-		<?php if ( $dbMapLocked !== NULL ): ?>'locked'            => '<?=$dbMapLocked?>',<?php endif ?>
-		<?php if ( $dbMapIpAddress !== NULL ): ?>'ip_address'        => '<?=$dbMapIpAddress?>'<?php endif ?>
+		<?php if ( $dbMapContainer !== NULL ) { ?>'container'         => '<?=$dbMapContainer?>',<?php } ?>
+		<?php if ( $dbMapAuthor !== NULL ) { ?>'author'            => '<?=$dbMapAuthor?>',<?php } ?>
+		<?php if ( $dbMapViews !== NULL ) { ?>'views'             => '<?=$dbMapViews?>',<?php } ?>
+		<?php if ( $dbMapTitle !== NULL ) { ?>'title'             => '<?=$dbMapTitle?>',<?php } ?>
+		<?php if ( $dbMapContent !== NULL ) { ?>'content'           => '<?=$dbMapContent?>',<?php } ?>
+		<?php if ( $dbMapNumComments !== NULL ) { ?>'num_comments'      => '<?=$dbMapNumComments?>',<?php } ?>
+		<?php if ( $dbMapLastComment !== NULL ) { ?>'last_comment'      => '<?=$dbMapLastComment?>' <?php } ?>,
+		<?php if ( $dbMapLastCommentBy !== NULL ) { ?>'last_comment_by'   => '<?=$dbMapLastCommentBy?>',<?php } ?>
+		<?php if ( $dbMapLastCommentName !== NULL ) { ?>'last_comment_name' => '<?=$dbMapLastCommentName?>',<?php } ?>
+		<?php if ( $dbMapLastReview !== NULL ) { ?>'last_review'       => '<?=$dbMapLastReview?>',<?php } ?>
+		<?php if ( $dbMapDate !== NULL ) { ?>'date'              => '<?=$dbMapDate?>',<?php } ?>
+		<?php if ( $dbMapUpdated !== NULL ) { ?>'updated'           => '<?=$dbMapUpdated?>',<?php } ?>
+		<?php if ( $dbMapApproved !== NULL ) { ?>'approved'          => '<?=$dbMapApproved?>',<?php } ?>
+		<?php if ( $dbMapApprovedBy !== NULL ) { ?>'approved_by'       => '<?=$dbMapApprovedBy?>',<?php } ?>
+		<?php if ( $dbMapApprovedDate !== NULL ) { ?>'approved_date'     => '<?=$dbMapApprovedDate?>',<?php } ?>
+		<?php if ( $dbMapPinned !== NULL ) { ?>'pinned'            => '<?=$dbMapPinned?>',<?php } ?>
+		<?php if ( $dbMapFeatured !== NULL ) { ?>'featured'          => '<?=$dbMapFeatured?>',<?php } ?>
+		<?php if ( $dbMapLocked !== NULL ) { ?>'locked'            => '<?=$dbMapLocked?>',<?php } ?>
+		<?php if ( $dbMapIpAddress !== NULL ) { ?>'ip_address'        => '<?=$dbMapIpAddress?>'<?php } ?>
 	);
-<?php endif ?>
+<?php } else { ?>
+	/**
+	 * @brief   Database Column Map
+	 */
+	public static $databaseColumnMap = array();
+<?php } ?>
+
 	/**
 	 * @brief   Title
 	 */
