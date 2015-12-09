@@ -1,5 +1,7 @@
 <?php
 
+namespace PowerTools\Template;
+
 /**
  * @brief       A simple, custom vanilla PHP template engine, inspired from http://chadminick.com
  * @author      Makoto Fujimoto <makoto@makoto.io>
