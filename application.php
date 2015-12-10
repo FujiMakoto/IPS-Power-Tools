@@ -16,4 +16,5 @@ $application->add(new Proxy\RegenCommand());
 $application->add(new Generate\ContentItemCommand());
 $application->add(new Generate\ContentCommentCommand());
 $application->add(new Generate\ContentNodeCommand());
+$application->add(new Generate\ActiveRecordCommand());
 $application->run();
