@@ -10,6 +10,7 @@
 
 namespace PowerTools\Command\Generate;
 
+use PowerTools\Console\GenerateCommand;
 use PowerTools\Parsers\ClassNamespace;
 use PowerTools\Template\Template;
 use Symfony\Component\Console\Command\Command;
@@ -20,7 +21,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Question\Question;
 
-class ContentItemCommand extends Command
+class ContentItemCommand extends GenerateCommand
 {
 	public $classNamespace = '';
 	public $className = '';
@@ -74,23 +75,6 @@ class ContentItemCommand extends Command
 				'The namespace for the desired content item class'
 			)
 		;
-	}
-
-	protected function generateTemplate()
-	{
-		$template = new Template();
-
-		foreach ( get_object_vars( $this ) as $key => $value )
-		{
-			$template->{$key} = $value;
-		}
-
-		return $template->render( 'phar://ptools/templates/content/item.php' );
-	}
-
-	protected function writeTemplate( $template )
-	{
-		file_put_contents( 'test.php', $template );
 	}
 
 	protected function execute(InputInterface $input, OutputInterface $output)
@@ -263,7 +247,7 @@ class ContentItemCommand extends Command
 				new Question('Reputation type', 'id')
 		);
 
-		$template = $this->generateTemplate();
+		$template = $this->generateTemplate( 'content/item.php' );
 		$this->writeTemplate( $template );
 	}
 }

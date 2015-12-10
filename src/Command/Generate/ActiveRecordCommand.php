@@ -10,9 +10,9 @@
 
 namespace PowerTools\Command\Generate;
 
+use PowerTools\Console\GenerateCommand;
 use PowerTools\Parsers\ClassNamespace;
 use PowerTools\Template\Template;
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -20,7 +20,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Question\Question;
 
-class ActiveRecordCommand extends Command
+class ActiveRecordCommand extends GenerateCommand
 {
 	public $classNamespace = '';
 	public $className = '';
@@ -43,23 +43,6 @@ class ActiveRecordCommand extends Command
 		;
 	}
 
-	protected function generateTemplate()
-	{
-		$template = new Template();
-
-		foreach ( get_object_vars( $this ) as $key => $value )
-		{
-			$template->{$key} = $value;
-		}
-
-		return $template->render( 'phar://ptools/templates/activerecord.php' );
-	}
-
-	protected function writeTemplate( $template )
-	{
-		file_put_contents( 'test.php', $template );
-	}
-
 	protected function execute(InputInterface $input, OutputInterface $output)
 	{
 		$question = $this->getHelper('question');
@@ -80,7 +63,7 @@ class ActiveRecordCommand extends Command
 				new Question('Database Column ID', 'id')
 		);
 
-		$template = $this->generateTemplate();
+		$template = $this->generateTemplate( 'activerecord.php' );
 		$this->writeTemplate( $template );
 	}
 }

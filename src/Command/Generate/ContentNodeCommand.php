@@ -10,6 +10,7 @@
 
 namespace PowerTools\Command\Generate;
 
+use PowerTools\Console\GenerateCommand;
 use PowerTools\Parsers\ClassNamespace;
 use PowerTools\Template\Template;
 use Symfony\Component\Console\Command\Command;
@@ -20,7 +21,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Question\Question;
 
-class ContentNodeCommand extends Command
+class ContentNodeCommand extends GenerateCommand
 {
 	public $classNamespace = '';
 	public $className = '';
@@ -49,33 +50,6 @@ class ContentNodeCommand extends Command
 				'The namespace for the desired content node class'
 			)
 		;
-	}
-
-	protected function generateTemplate()
-	{
-		$template = new Template();
-
-		foreach ( get_object_vars( $this ) as $key => $value )
-		{
-			if ( !in_array( $key, [ 'classNamespace', 'className', 'appDir', 'module' ] ) )
-			{
-				$value = $this->quoteOrNull( $value );
-			}
-
-			$template->{$key} = $value;
-		}
-
-		return $template->render( 'phar://ptools/templates/content/node.php' );
-	}
-
-	protected function writeTemplate( $template )
-	{
-		file_put_contents( 'test.php', $template );
-	}
-
-	protected function quoteOrNull( $value )
-	{
-		return !is_null( $value ) ? "'" . str_replace( "'", "\\'", $value ) . "'" : 'NULL';
 	}
 
 	protected function execute(InputInterface $input, OutputInterface $output)
@@ -121,7 +95,7 @@ class ContentNodeCommand extends Command
 				new Question('Title')
 		);
 
-		$template = $this->generateTemplate();
+		$template = $this->generateTemplate( 'content/node.php' );
 		$this->writeTemplate( $template );
 	}
 }
