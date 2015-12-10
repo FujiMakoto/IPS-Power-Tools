@@ -3,10 +3,10 @@
 
 require __DIR__.'/vendor/autoload.php';
 
-use PowerTools\Console\Proxy;
-use PowerTools\Console\Generate;
-use PowerTools\Console\ClassmapCommand;
-use PowerTools\Console\TinkerCommand;
+use PowerTools\Command\Proxy;
+use PowerTools\Command\Generate;
+use PowerTools\Command\ClassmapCommand;
+use PowerTools\Command\TinkerCommand;
 use Symfony\Component\Console\Application;
 
 $application = new Application('Power Tools', '0.1');

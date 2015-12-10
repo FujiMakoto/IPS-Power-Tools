@@ -8,7 +8,7 @@
  * @since       09 Dec 2015
  */
 
-namespace PowerTools\Console\Generate;
+namespace PowerTools\Command\Generate;
 
 use PowerTools\Parsers\ClassNamespace;
 use PowerTools\Template\Template;
