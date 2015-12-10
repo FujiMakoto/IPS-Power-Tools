@@ -15,4 +15,5 @@ $application->add(new TinkerCommand());
 $application->add(new Proxy\RegenCommand());
 $application->add(new Generate\ContentItemCommand());
 $application->add(new Generate\ContentCommentCommand());
+$application->add(new Generate\ContentNodeCommand());
 $application->run();
