@@ -1,8 +1,6 @@
 <?php
 
-
 namespace PowerTools\Console;
-
 
 class Question extends \Symfony\Component\Console\Question\Question
 {

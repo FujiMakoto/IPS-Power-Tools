@@ -5,8 +5,7 @@
  * @author      Makoto Fujimoto <makoto@makoto.io>
  * @copyright   (c) 2015 Makoto Fujimoto
  * @license     <a href='http://opensource.org/licenses/MIT'>MIT License</a>
- * @since       06 Dev 2015
- * @version     1.0.0
+ * @since       06 Dec 2015
  */
 
 namespace PowerTools\Command;

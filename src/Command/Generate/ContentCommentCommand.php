@@ -5,7 +5,7 @@
  * @author      Makoto Fujimoto <makoto@makoto.io>
  * @copyright   (c) 2015 Makoto Fujimoto
  * @license     <a href='http://opensource.org/licenses/MIT'>MIT License</a>
- * @since       08 Dev 2015
+ * @since       08 Dec 2015
  */
 
 namespace PowerTools\Command\Generate;

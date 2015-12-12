@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @brief           ipsProxy Generator (Originally authored by Michael, Modified by Makoto for use with Power Tools)
- * @author          <a href='http://codingjungle.com'>Michael S. Edwards</a>
- * @author          Makoto Fujimoto <makoto@makoto.io>
- * @license         http://opensource.org/licenses/MIT
- * @package         Power Tools
- * @since           29 Mar 2015
- * @version         1.0.0
+ * @brief       ipsProxy Generator (Originally authored by Michael, Modified by Makoto for use with Power Tools)
+ * @author      <a href='http://codingjungle.com'>Michael S. Edwards</a>
+ * @author      Makoto Fujimoto <makoto@makoto.io>
+ * @license     http://opensource.org/licenses/MIT
+ * @package     Power Tools
+ * @since       29 Mar 2015
+ * @version     1.0.0
  */
 
 namespace PowerTools\Command\Proxy;
