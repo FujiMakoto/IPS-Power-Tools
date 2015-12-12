@@ -25,12 +25,12 @@ class _<?=$className?> extends \IPS\Content\Item
 	/**
 	 * @brief   Database Table
 	 */
-	public static $databaseTable = '<?=$databaseTable?>';
+	public static $databaseTable = <?=$databaseTable?>;
 
 	/**
 	 * @brief   Database Prefix
 	 */
-	public static $databasePrefix = '<?=$databasePrefix?>';
+	public static $databasePrefix = <?=$databasePrefix?>;
 
 	/**
 	 * @brief   Multiton Store
@@ -40,7 +40,7 @@ class _<?=$className?> extends \IPS\Content\Item
 	/**
 	 * @brief   [ActiveRecord] ID Database Column
 	 */
-	public static $databaseColumnId = '<?=$databaseColumnId?>';
+	public static $databaseColumnId = <?=$databaseColumnId?>;
 
 	/**
 	 * @brief   Default Values
@@ -67,43 +67,43 @@ class _<?=$className?> extends \IPS\Content\Item
 	 * @brief   Database Column Map
 	 */
 	public static $databaseColumnMap = array(
-		<?php if ( $dbMapContainer !== NULL ) { ?>'container'         => '<?=$dbMapContainer?>',<?php } ?>
+		<?php if ( $dbMapContainer !== NULL ) { ?>'container'         => <?=$dbMapContainer?>,<?php } ?>
 
-		<?php if ( $dbMapAuthor !== NULL ) { ?>'author'            => '<?=$dbMapAuthor?>',<?php } ?>
+		<?php if ( $dbMapAuthor !== NULL ) { ?>'author'            => <?=$dbMapAuthor?>,<?php } ?>
 
-		<?php if ( $dbMapViews !== NULL ) { ?>'views'             => '<?=$dbMapViews?>',<?php } ?>
+		<?php if ( $dbMapViews !== NULL ) { ?>'views'             => <?=$dbMapViews?>,<?php } ?>
 
-		<?php if ( $dbMapTitle !== NULL ) { ?>'title'             => '<?=$dbMapTitle?>',<?php } ?>
+		<?php if ( $dbMapTitle !== NULL ) { ?>'title'             => <?=$dbMapTitle?>,<?php } ?>
 
-		<?php if ( $dbMapContent !== NULL ) { ?>'content'           => '<?=$dbMapContent?>',<?php } ?>
+		<?php if ( $dbMapContent !== NULL ) { ?>'content'           => <?=$dbMapContent?>,<?php } ?>
 
-		<?php if ( $dbMapNumComments !== NULL ) { ?>'num_comments'      => '<?=$dbMapNumComments?>',<?php } ?>
+		<?php if ( $dbMapNumComments !== NULL ) { ?>'num_comments'      => <?=$dbMapNumComments?>,<?php } ?>
 
-		<?php if ( $dbMapLastComment !== NULL ) { ?>'last_comment'      => '<?=$dbMapLastComment?>',<?php } ?>
+		<?php if ( $dbMapLastComment !== NULL ) { ?>'last_comment'      => <?=$dbMapLastComment?>,<?php } ?>
 
-		<?php if ( $dbMapLastCommentBy !== NULL ) { ?>'last_comment_by'   => '<?=$dbMapLastCommentBy?>',<?php } ?>
+		<?php if ( $dbMapLastCommentBy !== NULL ) { ?>'last_comment_by'   => <?=$dbMapLastCommentBy?>,<?php } ?>
 
-		<?php if ( $dbMapLastCommentName !== NULL ) { ?>'last_comment_name' => '<?=$dbMapLastCommentName?>',<?php } ?>
+		<?php if ( $dbMapLastCommentName !== NULL ) { ?>'last_comment_name' => <?=$dbMapLastCommentName?>,<?php } ?>
 
-		<?php if ( $dbMapLastReview !== NULL ) { ?>'last_review'       => '<?=$dbMapLastReview?>',<?php } ?>
+		<?php if ( $dbMapLastReview !== NULL ) { ?>'last_review'       => <?=$dbMapLastReview?>,<?php } ?>
 
-		<?php if ( $dbMapDate !== NULL ) { ?>'date'              => '<?=$dbMapDate?>',<?php } ?>
+		<?php if ( $dbMapDate !== NULL ) { ?>'date'              => <?=$dbMapDate?>,<?php } ?>
 
-		<?php if ( $dbMapUpdated !== NULL ) { ?>'updated'           => '<?=$dbMapUpdated?>',<?php } ?>
+		<?php if ( $dbMapUpdated !== NULL ) { ?>'updated'           => <?=$dbMapUpdated?>,<?php } ?>
 
-		<?php if ( $dbMapApproved !== NULL ) { ?>'approved'          => '<?=$dbMapApproved?>',<?php } ?>
+		<?php if ( $dbMapApproved !== NULL ) { ?>'approved'          => <?=$dbMapApproved?>,<?php } ?>
 
-		<?php if ( $dbMapApprovedBy !== NULL ) { ?>'approved_by'       => '<?=$dbMapApprovedBy?>',<?php } ?>
+		<?php if ( $dbMapApprovedBy !== NULL ) { ?>'approved_by'       => <?=$dbMapApprovedBy?>,<?php } ?>
 
-		<?php if ( $dbMapApprovedDate !== NULL ) { ?>'approved_date'     => '<?=$dbMapApprovedDate?>',<?php } ?>
+		<?php if ( $dbMapApprovedDate !== NULL ) { ?>'approved_date'     => <?=$dbMapApprovedDate?>,<?php } ?>
 
-		<?php if ( $dbMapPinned !== NULL ) { ?>'pinned'            => '<?=$dbMapPinned?>',<?php } ?>
+		<?php if ( $dbMapPinned !== NULL ) { ?>'pinned'            => <?=$dbMapPinned?>,<?php } ?>
 
-		<?php if ( $dbMapFeatured !== NULL ) { ?>'featured'          => '<?=$dbMapFeatured?>',<?php } ?>
+		<?php if ( $dbMapFeatured !== NULL ) { ?>'featured'          => <?=$dbMapFeatured?>,<?php } ?>
 
-		<?php if ( $dbMapLocked !== NULL ) { ?>'locked'            => '<?=$dbMapLocked?>',<?php } ?>
+		<?php if ( $dbMapLocked !== NULL ) { ?>'locked'            => <?=$dbMapLocked?>,<?php } ?>
 
-		<?php if ( $dbMapIpAddress !== NULL ) { ?>'ip_address'        => '<?=$dbMapIpAddress?>'<?php } ?>
+		<?php if ( $dbMapIpAddress !== NULL ) { ?>'ip_address'        => <?=$dbMapIpAddress?><?php } ?>
 
 	);
 <?php } else { ?>
@@ -116,25 +116,25 @@ class _<?=$className?> extends \IPS\Content\Item
 	/**
 	 * @brief   Title
 	 */
-	public static $title = '<?=$title?>';
+	public static $title = <?=$title?>;
 
 	/**
 	 * @brief   Icon
 	 */
-	public static $icon = '<?=$icon?>';
+	public static $icon = <?=$icon?>;
 
 	/**
 	 * @brief   [Content] Key for hide reasons
 	 */
-	public static $hideLogKey = '<?=$hideLogKey?>';
+	public static $hideLogKey = <?=$hideLogKey?>;
 
 	/**
 	 * @brief   Form Lang Prefix
 	 */
-	public static $formLangPrefix = '<?=$formLangPrefix?>';
+	public static $formLangPrefix = <?=$formLangPrefix?>;
 
 	/**
 	 * @brief   Reputation Type
 	 */
-	public static $reputationType = '<?=$reputationType?>';
+	public static $reputationType = <?=$reputationType?>;
 }

@@ -25,47 +25,47 @@ class _<?=$className?> extends \IPS\Content\Comment implements \IPS\Content\Edit
 	/**
 	 * @brief   [Content\Comment]	Item Class
 	 */
-	public static $itemClass = '<?=$itemClass?>';
+	public static $itemClass = <?=$itemClass?>;
 
 	/**
 	 * @brief   [ActiveRecord] Database Table
 	 */
-	public static $databaseTable = '<?=$databaseTable?>';
+	public static $databaseTable = <?=$databaseTable?>;
 
 	/**
 	 * @brief   [ActiveRecord] Database Prefix
 	 */
-	public static $databasePrefix = '<?=$databasePrefix?>';
+	public static $databasePrefix = <?=$databasePrefix?>;
 
 	/**
 	 * @brief   [ActiveRecord] ID Database Column
 	 */
-	public static $databaseColumnId = '<?=$databaseColumnId?>';
+	public static $databaseColumnId = <?=$databaseColumnId?>;
 
 <?php if ( $dbMap ) { ?>
 	/**
 	 * @brief   Database Column Map
 	 */
 	public static $databaseColumnMap = array(
-		<?php if ( $dbMapItem !== NULL ) { ?>'item'             => '<?=$dbMapItem?>',<?php } ?>
+		<?php if ( $dbMapItem !== NULL ) { ?>'item'             => <?=$dbMapItem?>,<?php } ?>
 
-		<?php if ( $dbMapAuthor !== NULL ) { ?>'author'           => '<?=$dbMapAuthor?>',<?php } ?>
+		<?php if ( $dbMapAuthor !== NULL ) { ?>'author'           => <?=$dbMapAuthor?>,<?php } ?>
 
-		<?php if ( $dbMapAuthorName !== NULL ) { ?>'author_name'      => '<?=$dbMapAuthorName?>',<?php } ?>
+		<?php if ( $dbMapAuthorName !== NULL ) { ?>'author_name'      => <?=$dbMapAuthorName?>,<?php } ?>
 
-		<?php if ( $dbMapContent !== NULL ) { ?>'content'          => '<?=$dbMapContent?>',<?php } ?>
+		<?php if ( $dbMapContent !== NULL ) { ?>'content'          => <?=$dbMapContent?>,<?php } ?>
 
-		<?php if ( $dbMapDate !== NULL ) { ?>'date'             => '<?=$dbMapDate?>',<?php } ?>
+		<?php if ( $dbMapDate !== NULL ) { ?>'date'             => <?=$dbMapDate?>,<?php } ?>
 
-		<?php if ( $dbMapIpAddress !== NULL ) { ?>'ip_address'       => '<?=$dbMapIpAddress?>',<?php } ?>
+		<?php if ( $dbMapIpAddress !== NULL ) { ?>'ip_address'       => <?=$dbMapIpAddress?>,<?php } ?>
 
-		<?php if ( $dbMapEditTime !== NULL ) { ?>'edit_time'        => '<?=$dbMapEditTime?>',<?php } ?>
+		<?php if ( $dbMapEditTime !== NULL ) { ?>'edit_time'        => <?=$dbMapEditTime?>,<?php } ?>
 
-		<?php if ( $dbMapEditName !== NULL ) { ?>'edit_member_name' => '<?=$dbMapEditName?>',<?php } ?>
+		<?php if ( $dbMapEditName !== NULL ) { ?>'edit_member_name' => <?=$dbMapEditName?>,<?php } ?>
 
-		<?php if ( $dbMapEditShow !== NULL ) { ?>'edit_show'        => '<?=$dbMapEditShow?>',<?php } ?>
+		<?php if ( $dbMapEditShow !== NULL ) { ?>'edit_show'        => <?=$dbMapEditShow?>,<?php } ?>
 
-		<?php if ( $dbMapApproved !== NULL ) { ?>'approved'         => '<?=$dbMapApproved?>'<?php } ?>
+		<?php if ( $dbMapApproved !== NULL ) { ?>'approved'         => <?=$dbMapApproved?><?php } ?>
 
 	);
 <?php } else { ?>
@@ -78,20 +78,20 @@ class _<?=$className?> extends \IPS\Content\Comment implements \IPS\Content\Edit
 	/**
 	 * @brief   Title
 	 */
-	public static $title = '<?=$title?>';
+	public static $title = <?=$title?>;
 
 	/**
 	 * @brief   Icon
 	 */
-	public static $icon = '<?=$icon?>';
+	public static $icon = <?=$icon?>;
 
 	/**
 	 * @brief   [Content] Key for hide reasons
 	 */
-	public static $hideLogKey = '<?=$hideLogKey?>';
+	public static $hideLogKey = <?=$hideLogKey?>;
 
 	/**
 	 * @brief   Reputation Type
 	 */
-	public static $reputationType = '<?=$reputationType?>';
+	public static $reputationType = <?=$reputationType?>;
 }

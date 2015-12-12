@@ -127,6 +127,26 @@ class _<?=$className?> extends \IPS\Node\Model implements \IPS\Node\Permissions
 	public static $databaseColumnEnabledDisabled = 'enabled';
 
 	/**
+	 * @brief	Cached URL
+	 */
+	protected $_url	= NULL;
+
+	/**
+	 * @brief	URL Base
+	 */
+	public static $urlBase = 'app=<?=$appDir?>&module=<?=$appDir?>&controller=browse&id=';
+
+	/**
+	 * @brief	URL Base
+	 */
+	public static $urlTemplate = '<?=$appDir?>_cat';
+
+	/**
+	 * @brief	SEO Title Column
+	 */
+	public static $seoTitleColumn = 'name_furl';
+
+	/**
 	 * Get SEO name
 	 *
 	 * @return	string
@@ -166,24 +186,4 @@ class _<?=$className?> extends \IPS\Node\Model implements \IPS\Node\Permissions
 		/* Send to parent */
 		return $values;
 	}
-
-	/**
-	 * @brief	Cached URL
-	 */
-	protected $_url	= NULL;
-
-	/**
-	 * @brief	URL Base
-	 */
-	public static $urlBase = 'app=<?=$appDir?>&module=<?=$appDir?>&controller=browse&id=';
-
-	/**
-	 * @brief	URL Base
-	 */
-	public static $urlTemplate = '<?=$appDir?>_cat';
-
-	/**
-	 * @brief	SEO Title Column
-	 */
-	public static $seoTitleColumn = 'name_furl';
 }
