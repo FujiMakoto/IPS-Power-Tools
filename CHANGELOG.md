@@ -8,4 +8,4 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Active Record generator
 - Content Node generator
 - Content Item generator
-- Content comment generator
+- Content Comment generator
