@@ -6,7 +6,7 @@
  */
 
 # Linux executable
-$e = new Phar('ptools-linux.phar', FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::KEY_AS_FILENAME, 'ptools');
+$e = new Phar('ptools-linux.phar', FilesystemIterator::CURRENT_AS_FILEINFO | FilesystemIterator::KEY_AS_FILENAME, 'ptools.phar');
 $e->startBuffering();
 
 $e->setStub("#!/usr/bin/env php\n\n" . $e->createDefaultStub("application.php"));
@@ -17,6 +17,7 @@ $e->buildFromDirectory('.', '$(.*)\.md$');
 $e->stopBuffering();
 rename('ptools-linux.phar', 'ptools');
 print "ptools Linux executable packaged successfully\n";
+unset($e);
 
 
 # Standard phar archive

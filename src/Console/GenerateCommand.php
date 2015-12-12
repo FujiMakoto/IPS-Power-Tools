@@ -59,7 +59,7 @@ class GenerateCommand extends Command
 			$template->{$key} = $value;
 		}
 
-		return $template->render( "phar://ptools/templates/{$templatePath}" );
+		return $template->render( "phar://ptools.phar/templates/{$templatePath}" );
 	}
 
 	/**
