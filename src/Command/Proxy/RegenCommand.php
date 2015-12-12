@@ -89,7 +89,7 @@ class RegenCommand extends Command
 		$skipSetup      = $input->getOption('skip-setup');
 
 		$save_path    = $input->getOption('path');
-		$save_basedir = join(\DIRECTORY_SEPARATOR, [getcwd(), \DIRECTORY_SEPARATOR, $save_path]);
+		$save_basedir = join(\DIRECTORY_SEPARATOR, [getcwd(), $save_path]);
 
 		// Check for any existing files
 		if ( $output->isVeryVerbose() )
