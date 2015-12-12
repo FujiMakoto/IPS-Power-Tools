@@ -7,11 +7,11 @@ use Symfony\Component\Console\Exception\InvalidArgumentException;
 
 class ClassNamespace
 {
-	public $classNamespace = '';
+	public $classNamespace;
 
-	public $appDir = '';
-	public $subDir = '';
-	public $className = '';
+	public $appDir;
+	public $parentClassName;
+	public $className;
 
 	/**
 	 * ClassNamespace constructor.
@@ -50,7 +50,7 @@ class ClassNamespace
 
 		// If we're still here, parse our namespace parts
 		$this->appDir    = $matches['appdir'];
-		$this->subDir    = isset( $matches['subdir'] ) ? $matches['subdir'] : '';
+		$this->parentClassName    = isset( $matches['subdir'] ) ? $matches['subdir'] : '';
 		$this->className = $matches['classname'];
 	}
 }
