@@ -72,7 +72,7 @@ class ContentCommentCommand extends GenerateCommand
 		// Database information
 		$this->databaseTable = $question->ask(
 				$input, $output,
-				new Question('Database Table', "{$this->appDir}_items")
+				new Question('Database Table', "{$this->appDir}_comments")
 		);
 		$this->databasePrefix = $question->ask(
 				$input, $output,
