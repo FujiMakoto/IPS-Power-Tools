@@ -10,7 +10,7 @@ Otherwise, just extract the included ptools.phar file to the directory of your I
 
 ```
 $ php ptools.phar 
-Power Tools version 0.1
+Power Tools version 0.2
 
 Usage:
   command [options] [arguments]
@@ -25,12 +25,17 @@ Options:
   -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
 
 Available commands:
-  classmap     Generate a map of error codes for classes in an IPS application
-  help         Displays help for a command
-  list         Lists commands
-  tinker       Launches an interactive shell interpreter for an IPS installation
+  classmap                  Generate a map of error codes for classes in an IPS application
+  help                      Displays help for a command
+  list                      Lists commands
+  tinker                    Launches an interactive shell interpreter for an IPS installation
+ generate
+  generate:activerecord     Generates an Active Record boilerplate class
+  generate:content-comment  Generates a Content Comment boilerplate class
+  generate:content-item     Generates a Content Item boilerplate class
+  generate:content-node     Generates a Content Node boilerplate class
  proxy
-  proxy:regen  (Re)generates all proxy classes for the application
+  proxy:regen               (Re)generates all proxy classes for the application
 ```
 
 ## Features
