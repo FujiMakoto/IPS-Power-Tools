@@ -11,6 +11,7 @@
 namespace PowerTools\Command\Generate;
 
 use PowerTools\Console\GenerateCommand;
+use PowerTools\Console\Question;
 use PowerTools\Parsers\ClassNamespace;
 use PowerTools\Template\Template;
 use Symfony\Component\Console\Input\InputArgument;
@@ -18,7 +19,6 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
-use Symfony\Component\Console\Question\Question;
 
 class ContentCommentCommand extends GenerateCommand
 {
@@ -68,7 +68,7 @@ class ContentCommentCommand extends GenerateCommand
 	{
 		$question = $this->getHelper('question');
 		$this->assignNamespaceAttributes( new ClassNamespace( $input->getArgument('namespace') ) );
-		
+
 		// Database information
 		$this->databaseTable = $question->ask(
 				$input, $output,
