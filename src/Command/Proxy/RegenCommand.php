@@ -10,7 +10,7 @@
  * @version         1.0.0
  */
 
-namespace PowerTools\Proxy;
+namespace PowerTools\Command\Proxy;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\ProgressBar;
