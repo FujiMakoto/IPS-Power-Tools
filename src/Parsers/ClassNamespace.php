@@ -49,8 +49,16 @@ class ClassNamespace
 		}
 
 		// If we're still here, parse our namespace parts
-		$this->appDir    = $matches['appdir'];
-		$this->parentClassName    = isset( $matches['subdir'] ) ? $matches['subdir'] : '';
-		$this->className = $matches['classname'];
+		$this->appDir          = $matches['appdir'];
+		$this->parentClassName = isset( $matches['subdir'] ) ? $matches['subdir'] : '';
+		$this->className       = $matches['classname'];
+
+		// Adjust our actual namespace (if necessary)
+		if ( $this->parentClassName )
+		{
+			$this->classNamespace = substr(
+					$this->classNamespace, 0, strrpos( $this->classNamespace, '\\' . $this->className )
+			);
+		}
 	}
 }
