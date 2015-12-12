@@ -67,13 +67,8 @@ class ContentCommentCommand extends GenerateCommand
 	protected function execute(InputInterface $input, OutputInterface $output)
 	{
 		$question = $this->getHelper('question');
-
-		// Load settings
-		$namespace = new ClassNamespace( $input->getArgument('namespace') );
-		$this->classNamespace = $namespace->classNamespace;
-		$this->appDir = $namespace->appDir;
-		$this->className = $namespace->className;
-
+		$this->assignNamespaceAttributes( new ClassNamespace( $input->getArgument('namespace') ) );
+		
 		// Database information
 		$this->databaseTable = $question->ask(
 				$input, $output,

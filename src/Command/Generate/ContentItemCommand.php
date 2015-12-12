@@ -80,12 +80,7 @@ class ContentItemCommand extends GenerateCommand
 	protected function execute(InputInterface $input, OutputInterface $output)
 	{
 		$question = $this->getHelper('question');
-
-		// Load settings
-		$namespace = new ClassNamespace( $input->getArgument('namespace') );
-		$this->classNamespace = $namespace->classNamespace;
-		$this->appDir = $namespace->appDir;
-		$this->className = $namespace->className;
+		$this->assignNamespaceAttributes( new ClassNamespace( $input->getArgument('namespace') ) );
 
 		$this->module = $question->ask(
 				$input, $output,

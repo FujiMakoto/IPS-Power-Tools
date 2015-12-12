@@ -22,13 +22,8 @@ use Symfony\Component\Console\Question\Question;
 
 class ActiveRecordCommand extends GenerateCommand
 {
-	public $classNamespace = '';
-	public $className = '';
-
-	public $appDir = '';
-
-	public $databaseTable = '';
-	public $databaseColumnId = '';
+	public $databaseTable;
+	public $databaseColumnId;
 
 	protected function configure()
 	{
@@ -46,12 +41,7 @@ class ActiveRecordCommand extends GenerateCommand
 	protected function execute(InputInterface $input, OutputInterface $output)
 	{
 		$question = $this->getHelper('question');
-
-		// Load settings
-		$namespace = new ClassNamespace( $input->getArgument('namespace') );
-		$this->classNamespace = $namespace->classNamespace;
-		$this->appDir = $namespace->appDir;
-		$this->className = $namespace->className;
+		$this->assignNamespaceAttributes( new ClassNamespace( $input->getArgument('namespace') ) );
 
 		// Database information
 		$this->databaseTable = $question->ask(
