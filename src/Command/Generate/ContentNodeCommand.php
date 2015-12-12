@@ -66,7 +66,7 @@ class ContentNodeCommand extends GenerateCommand
 				$input, $output,
 				new Question('Database prefix', '')
 		);
-		$this->databasePrefix = $question->ask(
+		$this->databaseColumnId = $question->ask(
 				$input, $output,
 				new Question('Database column ID', 'id')
 		);

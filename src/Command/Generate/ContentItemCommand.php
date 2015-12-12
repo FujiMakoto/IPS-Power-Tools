@@ -96,7 +96,7 @@ class ContentItemCommand extends GenerateCommand
 				$input, $output,
 				new Question('Database Prefix', '')
 		);
-		$this->databasePrefix = $question->ask(
+		$this->databaseColumnId = $question->ask(
 				$input, $output,
 				new Question('Database Column ID', 'id')
 		);
